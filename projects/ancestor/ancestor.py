@@ -1,23 +1,10 @@
-# class Stack():
-    # def __init__(self):
-        # self.stack = []
-    # def push(self, value):
-        # self.stack.append(value)
-    # def pop(self):
-        # if self.size() > 0:
-            # return self.stack.pop()
-        # else:
-            # return None
-    # def size(self):
-        # return len(self.stack)
-
 # testData = [[1,3],[2, 3],[3, 6],[5, 6],[5, 7],[4, 5],[4, 8],[8, 9],[11, 8],[10, 1]]
 
 # # answers = [[number, count], [number, count]]
 # answers = []
 # largest_count = 0
 
-# def findAncestor(arr, number, count=0):
+# def findAncestor(arr, number, count=-1):
     # # loop over arrays:
     # base_case = True
     # count += 1
@@ -31,24 +18,28 @@
         # global largest_count
         # if count > largest_count:
             # largest_count = count
-        # answers.append([number, count])
+        # if count > 0:
+            # answers.append([number, count])
 
-
-# def endGameParent(arr, number):
+# def earliest_ancestor(arr, number):
     # global answers
     # global largest_count
     # answers = []
+    # largest_count = 0
     # # call findAncestor (arr, number)
     # findAncestor(arr, number)
     # # loop over returned values
     # final_answer = -1
+    # # print("potential answers: ", answers)
+    # # print("final answer: ", final_answer)
     # for i in range(len(answers)):
+        # # print(answers[i])
         # if answers[i][1] == largest_count:
-            # if final_answer > answers[i][0] or final_answer == -1:
+            # if final_answer == -1 or final_answer > answers[i][0]:
+                # # print("change final answer")
                 # final_answer = answers[i][0]
+    # # print("final answer: ", final_answer)
     # return final_answer
-
-# print(endGameParent(testData, 9))
 
 from collections import deque
 import operator
